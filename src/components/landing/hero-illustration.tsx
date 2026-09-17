@@ -48,6 +48,7 @@ export function HeroIllustration() {
             src="/reference/boy.png"
             alt=""
             fill
+            priority
             sizes="100vw"
             className="object-contain"
           />
@@ -77,6 +78,7 @@ export function HeroIllustration() {
             src="/reference/boy.png"
             alt=""
             fill
+            priority
             sizes="65vw"
             className="object-cover object-right"
           />
