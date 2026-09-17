@@ -31,7 +31,7 @@ export default async function ToolPage({
       <Card>
         <p className="text-ink-2 text-sm">
           This tool&rsquo;s guided flow is part of the live product, not this
-          frontend build. Every founder on the team can open it — CXO roles are
+          frontend build. Every founder on the team can open it - CXO roles are
           about who leads, never about who&rsquo;s allowed in.
         </p>
       </Card>

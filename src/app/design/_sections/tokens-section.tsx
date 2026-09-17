@@ -14,15 +14,15 @@ const textSwatches = [
 ];
 
 const actionSwatches = [
-  { name: "Green — primary CTA", className: "bg-green" },
-  { name: "Dark — Continue / Get started", className: "bg-dark" },
+  { name: "Green - primary CTA", className: "bg-green" },
+  { name: "Dark - Continue / Get started", className: "bg-dark" },
 ];
 
 const stageSwatches = [
-  { name: "Learn — blue", className: "bg-stage-learn" },
-  { name: "Learn to Build — purple", className: "bg-stage-learn-to-build" },
-  { name: "Build — gold", className: "bg-stage-build" },
-  { name: "Launch — green", className: "bg-stage-launch" },
+  { name: "Learn - blue", className: "bg-stage-learn" },
+  { name: "Learn to Build - purple", className: "bg-stage-learn-to-build" },
+  { name: "Build - gold", className: "bg-stage-build" },
+  { name: "Launch - green", className: "bg-stage-launch" },
 ];
 
 const landingTints = [
@@ -40,7 +40,7 @@ const statusSwatches = [
 const typeSteps = [
   {
     className: "text-7xl font-display font-normal",
-    label: "Display XL — hero headlines (serif, 400)",
+    label: "Display XL - hero headlines (serif, 400)",
   },
   {
     className: "text-6xl font-display font-normal",

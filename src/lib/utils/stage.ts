@@ -57,21 +57,21 @@ export const STAGE_CLASSES: Record<Stage, StageClasses> = {
 /**
  * The real stage of each of the 11 sessions (Pre + 1-10), in order.
  * Drives the route-transition loader dots. This is intentionally a
- * static content fact, not routed through lib/data/ — a loading.tsx
+ * static content fact, not routed through lib/data/ - a loading.tsx
  * fallback must render instantly and can't await a fixture. The real
  * Session fixtures in lib/data/sessions.ts are the source of truth
  * everywhere else and must stay consistent with this order.
  */
 export const SESSION_STAGE_SEQUENCE: Stage[] = [
-  "learn", // Pre — AI Readiness & Digital Citizenship
-  "learn-to-build", // 1 — Problem & Solution
-  "learn-to-build", // 2 — Team Formation & CXO Roles
-  "learn-to-build", // 3 — Mentorship & Booking
-  "learn-to-build", // 4 — Market, Competition & GTM
-  "build", // 5 — Product Logic & MVP
-  "learn-to-build", // 6 — Business Model Canvas
-  "learn-to-build", // 7 — Financial Model
-  "build", // 8 — Pitch Deck & Visuals
-  "launch", // 9 — Pitch Practice & Feedback
-  "launch", // 10 — Final Pitch Presentation
+  "learn", // Pre - AI Readiness & Digital Citizenship
+  "learn-to-build", // 1 - Problem & Solution
+  "learn-to-build", // 2 - Team Formation & CXO Roles
+  "learn-to-build", // 3 - Mentorship & Booking
+  "learn-to-build", // 4 - Market, Competition & GTM
+  "build", // 5 - Product Logic & MVP
+  "learn-to-build", // 6 - Business Model Canvas
+  "learn-to-build", // 7 - Financial Model
+  "build", // 8 - Pitch Deck & Visuals
+  "launch", // 9 - Pitch Practice & Feedback
+  "launch", // 10 - Final Pitch Presentation
 ];

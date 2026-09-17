@@ -8,7 +8,7 @@ import { SiteFooter } from "@/components/landing/site-footer";
 import { StructureSection } from "@/components/landing/structure-section";
 
 /**
- * Route: "/" — the public Dashboard (landing page). See D-001 for why
+ * Route: "/" - the public Dashboard (landing page). See D-001 for why
  * "Dashboard" names this page rather than a signed-in view.
  */
 export default async function DashboardPage() {

@@ -9,7 +9,7 @@ import { useSafeReducedMotion } from "@/lib/utils/use-safe-reduced-motion";
 import { STAGE_CLASSES } from "@/lib/utils/stage";
 
 /**
- * The one designed celebration moment (brief section 6) — a human
+ * The one designed celebration moment (brief section 6) - a human
  * approving a session's artifact, the core "approval gate" of the
  * product thesis. Deliberately not confetti: a single well-composed
  * beat tied to the session's own stage color.

@@ -3,7 +3,7 @@ import { getArtifacts } from "@/lib/data/artifacts";
 import { getNumberedSessions } from "@/lib/data/sessions";
 import { StatPill } from "@/components/ui/stat-pill";
 
-/** Few and honest — sessions complete, artifacts approved. */
+/** Few and honest - sessions complete, artifacts approved. */
 export async function TopBar() {
   const [sessions, artifacts] = await Promise.all([
     getNumberedSessions(),

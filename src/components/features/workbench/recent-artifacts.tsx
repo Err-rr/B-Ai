@@ -12,7 +12,7 @@ export function RecentArtifacts({ artifacts }: { artifacts: Artifact[] }) {
         </h2>
         <Card>
           <p className="text-ink-3 text-sm">
-            Nothing committed yet — approved work will show up here.
+            Nothing committed yet - approved work will show up here.
           </p>
         </Card>
       </section>

@@ -1,4 +1,4 @@
-/** The standard four-color Google "G" mark — not available in lucide-react. */
+/** The standard four-color Google "G" mark - not available in lucide-react. */
 export function GoogleMark({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true">

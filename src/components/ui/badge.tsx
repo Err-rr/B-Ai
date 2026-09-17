@@ -32,7 +32,7 @@ function toneClasses(tone: BadgeTone) {
 }
 
 /**
- * A small, quiet label — a stage, a status, or a CXO role. Never the
+ * A small, quiet label - a stage, a status, or a CXO role. Never the
  * loudest thing on a card; stage colors here are a tint wash, not a
  * solid fill (see docs/DESIGN-SYSTEM.md).
  */

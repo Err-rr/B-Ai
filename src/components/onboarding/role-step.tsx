@@ -14,6 +14,14 @@ export function RoleStep({
 
   return (
     <div>
+      <div className="min-h-32">
+        {selectedOption && (
+          <PeekCards
+            roleLabel={selectedOption.role}
+            peeks={selectedOption.peeks}
+          />
+        )}
+      </div>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
         {ROLE_OPTIONS.map((option) => (
           <SelectableCard
@@ -25,14 +33,6 @@ export function RoleStep({
             onSelect={() => onSelect(option.role)}
           />
         ))}
-      </div>
-      <div className="min-h-32">
-        {selectedOption && (
-          <PeekCards
-            roleLabel={selectedOption.role}
-            peeks={selectedOption.peeks}
-          />
-        )}
       </div>
     </div>
   );

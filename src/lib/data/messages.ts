@@ -7,16 +7,16 @@ export async function getInitialMessages(): Promise<Message[]> {
 }
 
 const REPLIES = [
-  "Good instinct. Before you commit to that, what evidence do you already have — a conversation, a data point, anything real? If it's thin, that's your next move, not the plan itself.",
+  "Good instinct. Before you commit to that, what evidence do you already have - a conversation, a data point, anything real? If it's thin, that's your next move, not the plan itself.",
   "That's a reasonable first pass. Now argue the other side: what would make a skeptical mentor say no? Write that down before you show anyone this.",
-  "I can help you structure that, but I won't write it for you — this decision is yours to own. Want to open the right tool from the Workbench, or talk it through here first?",
+  "I can help you structure that, but I won't write it for you - this decision is yours to own. Want to open the right tool from the Workbench, or talk it through here first?",
   "Sounds like you're closer than you think. What's the smallest version of this you could test with a real customer this week?",
 ];
 
 let replyIndex = 0;
 
 /**
- * A canned founder-coach reply — there is no real model behind this.
+ * A canned founder-coach reply - there is no real model behind this.
  * Rotates through a small set so a demo conversation doesn't repeat
  * itself immediately. Replace this function's body when a real
  * backend is wired up; call sites never change (see D-010).

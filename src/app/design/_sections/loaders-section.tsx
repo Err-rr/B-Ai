@@ -14,7 +14,7 @@ export function LoadersSection() {
     <Section title="Loading states">
       <div>
         <p className="text-ink-3 mb-2 text-xs">
-          Route transition — shown by loading.tsx during navigation
+          Route transition - shown by loading.tsx during navigation
         </p>
         <Card padding="sm">
           <RouteTransitionLoader compact />
@@ -22,7 +22,7 @@ export function LoadersSection() {
       </div>
       <div>
         <p className="text-ink-3 mb-2 text-xs">
-          AI thinking — carries the long waits, never a bare spinner
+          AI thinking - carries the long waits, never a bare spinner
         </p>
         <Card>
           <AIThinkingLoader messages={THINKING_MESSAGES} />

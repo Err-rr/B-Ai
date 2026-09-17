@@ -1,38 +1,74 @@
-import { Sparkles } from "lucide-react";
+"use client";
+
+import { PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import Link from "next/link";
 import type { Member, Tool } from "@/lib/types/domain";
 import { Avatar } from "@/components/ui/avatar";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
+import { cn } from "@/lib/utils/cn";
+import { useSidebar } from "./sidebar-context";
 import { SidebarNav } from "./sidebar-nav";
 
-/** The persistent desktop sidebar. Hidden below md — see MobileNav. */
+/** The persistent desktop sidebar - fixed to the viewport, collapsible. */
 export function Sidebar({ tools, member }: { tools: Tool[]; member: Member }) {
+  const { collapsed, toggle } = useSidebar();
+
   return (
-    <aside className="border-line bg-card hidden h-screen w-72 shrink-0 flex-col border-r md:flex">
-      <div className="p-6">
-        <Link href="/workbench" className="flex items-center gap-2">
-          <span className="bg-green text-on-accent inline-flex size-8 items-center justify-center rounded-lg">
-            <Sparkles className="size-4" aria-hidden="true" />
-          </span>
-          <span className="font-display text-ink text-xl font-normal">
-            Bootcamp AI
-          </span>
+    <aside
+      className={cn(
+        "border-line bg-card fixed inset-y-0 left-0 z-20 hidden h-screen shrink-0 flex-col border-r transition-[width] duration-150 ease-out md:flex",
+        collapsed ? "w-20" : "w-72",
+      )}
+    >
+      <div className="flex items-center justify-between gap-2 p-4">
+        <Link href="/workbench" className="flex min-w-0 items-center gap-2">
+          <Logo size={32} />
+          {!collapsed && (
+            <span className="font-display text-ink truncate text-xl font-normal">
+              Bootcamp AI
+            </span>
+          )}
         </Link>
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+          onClick={toggle}
+          className="shrink-0"
+        >
+          {collapsed ? (
+            <PanelLeftOpen className="size-5" aria-hidden="true" />
+          ) : (
+            <PanelLeftClose className="size-5" aria-hidden="true" />
+          )}
+        </Button>
       </div>
 
       <div className="flex-1 overflow-y-auto px-3">
-        <SidebarNav tools={tools} />
+        <SidebarNav tools={tools} collapsed={collapsed} />
       </div>
 
-      <div className="border-line flex items-center justify-between border-t p-4">
-        <div className="flex items-center gap-3">
+      <div
+        className={cn(
+          "border-line flex items-center border-t p-4",
+          collapsed ? "justify-center" : "justify-between",
+        )}
+      >
+        <div className="flex min-w-0 items-center gap-3">
           <Avatar name={member.name} size="sm" />
-          <div className="flex flex-col">
-            <span className="text-ink text-sm font-medium">{member.name}</span>
-            <span className="text-ink-3 text-xs">{member.role}</span>
-          </div>
+          {!collapsed && (
+            <div className="flex min-w-0 flex-col">
+              <span className="text-ink truncate text-sm font-medium">
+                {member.name}
+              </span>
+              <span className="text-ink-3 truncate text-xs">
+                {member.role}
+              </span>
+            </div>
+          )}
         </div>
-        <ThemeToggle />
       </div>
     </aside>
   );

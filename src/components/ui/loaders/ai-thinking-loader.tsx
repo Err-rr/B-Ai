@@ -13,7 +13,7 @@ export interface AIThinkingLoaderProps {
 
 /**
  * Carries the long AI waits (30-90s on research-heavy sessions). Never
- * a bare spinner — it narrates what the AI is actually doing, cycling
+ * a bare spinner - it narrates what the AI is actually doing, cycling
  * through the messages the caller passes in for its own context.
  */
 export function AIThinkingLoader({

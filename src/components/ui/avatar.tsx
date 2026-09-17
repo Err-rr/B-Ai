@@ -21,7 +21,7 @@ function initials(name: string) {
 
 /**
  * No photo uploads in this phase, so every avatar is initials on a
- * consistent brand tint — never a stage color, which would wrongly
+ * consistent brand tint - never a stage color, which would wrongly
  * imply the person represents a journey stage.
  */
 export function Avatar({ name, size = "md", className }: AvatarProps) {

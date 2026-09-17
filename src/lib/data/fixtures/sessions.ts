@@ -2,7 +2,7 @@ import type { Session } from "@/lib/types/domain";
 
 /**
  * The canonical 10 sessions + Pre, per the bootcamp curriculum. Four
- * are complete, "Product Logic & MVP" is current — matches the "4 of
+ * are complete, "Product Logic & MVP" is current - matches the "4 of
  * 10 sessions" / "4/10 stages complete" figures used across fixtures.
  */
 export const SESSIONS: Session[] = [

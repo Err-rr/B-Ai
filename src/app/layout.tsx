@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Instrument_Serif, Inter } from "next/font/google";
-import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -19,18 +18,18 @@ export const metadata: Metadata = {
   title: "Bootcamp AI",
   description:
     "An AI-assisted startup bootcamp for student founders, run by Young Founders School.",
+  icons: {
+    icon: "/reference/favicon.ico",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      suppressHydrationWarning
       className={`${instrumentSerif.variable} ${inter.variable} h-full`}
     >
-      <body className="min-h-full font-sans antialiased">
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body className="min-h-full font-sans antialiased">{children}</body>
     </html>
   );
 }

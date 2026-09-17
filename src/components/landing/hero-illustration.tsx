@@ -16,7 +16,7 @@ const OFFSETS = [
 ];
 
 /**
- * A flat geometric preview of the stage arc — no stock photography or
+ * A flat geometric preview of the stage arc - no stock photography or
  * 3D renders, per the brief. Cascading rather than a literal chart.
  * `overflow-hidden` is a safety net: the translated rows are visual
  * transform offsets (they don't affect layout width), so without it

@@ -24,7 +24,7 @@ export default function ErrorBoundary({
         Something went wrong
       </h1>
       <p className="text-ink-2 max-w-sm text-sm">
-        That&rsquo;s on us, not you. Try again — if it keeps happening, come
+        That&rsquo;s on us, not you. Try again - if it keeps happening, come
         back later.
       </p>
       <Button onClick={reset} className="mt-2">

@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @import "../styles/tokens.css";
 
-/* Manual, class-based dark mode — driven by ThemeProvider, not the OS media query. */
-@custom-variant dark (&:where(.dark, .dark *));
-
 @theme inline {
   /* ---- Fonts ---- */
   --font-sans: var(--font-inter);
@@ -82,10 +79,10 @@
   --ease-in-out: var(--ease-in-out);
 
   /*
-   * Type scale — implemented on Tailwind's numeric text-* utilities so
+   * Type scale - implemented on Tailwind's numeric text-* utilities so
    * every size in the app is one of these ten values. text-4xl and up
    * are the serif "display" tier (weight 400 only, tight leading,
-   * ~zero tracking — never bold); text-xl/2xl/3xl are the sans
+   * ~zero tracking - never bold); text-xl/2xl/3xl are the sans
    * "heading" tier (Inter, semibold). See docs/DESIGN-SYSTEM.md.
    */
   --text-xs: 0.8125rem; /* caption */
@@ -124,15 +121,15 @@
   --text-6xl--line-height: 1;
   --text-6xl--letter-spacing: 0em;
 
-  --text-7xl: 4.75rem; /* display xl (serif, weight 400) — hero only */
+  --text-7xl: 4.75rem; /* display xl (serif, weight 400) - hero only */
   --text-7xl--line-height: 1;
   --text-7xl--letter-spacing: 0em;
 
-  --text-8xl: 4.75rem; /* capped at display xl — no larger step exists */
+  --text-8xl: 4.75rem; /* capped at display xl - no larger step exists */
   --text-8xl--line-height: 1;
   --text-8xl--letter-spacing: 0em;
 
-  --text-9xl: 4.75rem; /* capped at display xl — no larger step exists */
+  --text-9xl: 4.75rem; /* capped at display xl - no larger step exists */
   --text-9xl--line-height: 1;
   --text-9xl--letter-spacing: 0em;
 
@@ -150,10 +147,6 @@
     color-scheme: light;
   }
 
-  html.dark {
-    color-scheme: dark;
-  }
-
   body {
     background: var(--color-paper);
     color: var(--color-ink);
@@ -164,7 +157,7 @@
     color: var(--color-ink);
   }
 
-  /* A single, visible focus ring everywhere — never suppressed. */
+  /* A single, visible focus ring everywhere - never suppressed. */
   :focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 2px;

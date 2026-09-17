@@ -2,7 +2,7 @@ import type { Contribution } from "@/lib/types/domain";
 
 /**
  * Heatmap cells for sessions 1-10 (the numbered curriculum, matching
- * the brief's "10 sessions across the top" — Pre isn't a column here).
+ * the brief's "10 sessions across the top" - Pre isn't a column here).
  * Sessions without an entry for a member render as an empty cell.
  */
 export const CONTRIBUTIONS: Contribution[] = [

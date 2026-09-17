@@ -1,19 +1,18 @@
 /*
- * Design tokens — the single source of truth for color, type, radius,
+ * Design tokens - the single source of truth for color, type, radius,
  * shadow and motion in Bootcamp AI.
  *
  * Nothing outside this file should hold a raw hex value, a font-size,
  * a border-radius or an animation duration. Components consume these
  * through the Tailwind theme mapping in `src/app/globals.css`.
  *
- * Light values are the fixed palette. Dark values invert the surface
- * layering and brighten the accent colors to hold contrast — see
- * docs/DECISIONS.md D-015 for the exact reasoning and every hex.
+ * Light-only palette - see docs/DECISIONS.md D-015 for the exact
+ * reasoning and every hex.
  */
 
 :root {
   /* ---- Surfaces ---- */
-  --paper: #f5f4f0; /* page background, warm off-white — never pure white */
+  --paper: #f5f4f0; /* page background, warm off-white - never pure white */
   --card: #ffffff; /* card surfaces */
   --line: #e8e7e3; /* hairline borders */
   --track: #e5e5e5; /* progress bar track, unfilled segments */
@@ -28,14 +27,14 @@
   /* ---- Actions ---- */
   --green: #00bc5c; /* primary CTA */
   --dark: #26262a; /* dark pill buttons: Continue, Get started */
-  --on-accent: #111111; /* text on --green — verified AA, white fails on this green */
+  --on-accent: #111111; /* text on --green - verified AA, white fails on this green */
   --on-dark: #ffffff; /* text on --dark */
 
   /* ---- Stage accents: Learn -> Learn to Build -> Build -> Launch ---- */
   --stage-learn: #4a7dec; /* blue */
   --stage-learn-to-build: #8b5cf6; /* purple */
   --stage-build: #f5c13d; /* gold */
-  --stage-launch: #00bc5c; /* green — matches the primary action color */
+  --stage-launch: #00bc5c; /* green - matches the primary action color */
 
   /* ---- Landing section panel tints (not stage-tied; alternate for rhythm) ---- */
   --tint-peach: #fcefe3;
@@ -69,41 +68,4 @@
   --duration-fast: 120ms;
   --duration-base: 200ms;
   --duration-slow: 360ms;
-}
-
-:root.dark {
-  --paper: #171613;
-  --card: #201e1a;
-  --line: #35322c;
-  --track: #3d3a33;
-  --border-hover: #4a4640;
-  --tint-mix-base: var(--card);
-
-  --ink: #f5f4f0;
-  --ink-2: #c7c4bc;
-  --ink-3: #8c8880;
-
-  --green: #22d67a;
-  --dark: #f5f4f0;
-  --on-accent: #111111;
-  --on-dark: #111111;
-
-  --stage-learn: #6e97f5;
-  --stage-learn-to-build: #a78bfa;
-  --stage-build: #f7d171;
-  --stage-launch: #22d67a;
-
-  --tint-peach: #3a2e22;
-  --tint-mint: #1c2e22;
-  --tint-lavender: #2a2438;
-
-  --success: #34d399;
-  --success-bg: #113828;
-  --warning: #f2a93c;
-  --warning-bg: #3a2a10;
-  --danger: #ff6b81;
-  --danger-bg: #3a1620;
-
-  --shadow-soft: 0 16px 32px -16px rgba(0, 0, 0, 0.55);
-  --shadow-hover: 0 4px 12px -6px rgba(0, 0, 0, 0.4);
 }

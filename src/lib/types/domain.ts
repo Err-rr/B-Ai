@@ -61,7 +61,7 @@ export interface Tool {
   slug: string;
   title: string;
   description: string;
-  /** Key into the icon registry — data stays framework-agnostic. */
+  /** Key into the icon registry - data stays framework-agnostic. */
   icon: string;
 }
 

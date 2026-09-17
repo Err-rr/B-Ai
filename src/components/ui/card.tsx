@@ -15,7 +15,7 @@ const PADDING_CLASSES = {
 
 /**
  * The primary unit of the interface. Defined by a hairline border and
- * generous padding, never by a drop shadow — shadow only appears on
+ * generous padding, never by a drop shadow - shadow only appears on
  * hover/selection (see docs/DESIGN-SYSTEM.md).
  */
 export const Card = forwardRef<HTMLDivElement, CardProps>(

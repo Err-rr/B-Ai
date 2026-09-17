@@ -1,11 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, Sparkles } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import type { CXORole, Session } from "@/lib/types/domain";
 import { Button } from "@/components/ui/button";
+import { Logo } from "@/components/ui/logo";
 import { SegmentedProgress } from "@/components/ui/segmented-progress";
 import { EASE } from "@/lib/utils/motion";
 import { useSafeReducedMotion } from "@/lib/utils/use-safe-reduced-motion";
@@ -22,7 +23,7 @@ const STEP_COPY = [
   },
   {
     question: "Name your venture",
-    subtext: "This shows up on your Workbench — you can edit it later.",
+    subtext: "This shows up on your Workbench - you can edit it later.",
   },
   {
     question: "Your two days, ten sessions",
@@ -74,7 +75,7 @@ export function OnboardingFlow({
   }
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-3xl flex-col px-6 py-10">
+    <div className="mx-auto flex min-h-screen max-w-3xl flex-col overflow-x-hidden px-6 py-10">
       <div className="mb-10 flex items-center gap-4">
         <button
           type="button"
@@ -95,9 +96,7 @@ export function OnboardingFlow({
       </div>
 
       <div className="mb-10 flex flex-col items-center gap-3 text-center">
-        <span className="bg-green text-on-accent inline-flex size-9 items-center justify-center rounded-lg">
-          <Sparkles className="size-4" aria-hidden="true" />
-        </span>
+        <Logo size={40} />
         <h1 className="text-ink font-sans text-3xl font-semibold">
           {STEP_COPY[step].question}
         </h1>

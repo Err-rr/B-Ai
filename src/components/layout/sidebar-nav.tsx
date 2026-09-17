@@ -35,17 +35,21 @@ function NavGroup({
   items,
   pathname,
   onNavigate,
+  collapsed,
 }: {
   label: string;
   items: NavItem[];
   pathname: string;
   onNavigate?: () => void;
+  collapsed?: boolean;
 }) {
   return (
     <div className="space-y-1">
-      <p className="text-eyebrow text-ink-3 px-3 font-semibold uppercase">
-        {label}
-      </p>
+      {!collapsed && (
+        <p className="text-eyebrow text-ink-3 px-3 font-semibold uppercase">
+          {label}
+        </p>
+      )}
       {items.map((item) => {
         const active = pathname.startsWith(item.href);
         return (
@@ -53,15 +57,17 @@ function NavGroup({
             key={item.href}
             href={item.href}
             onClick={onNavigate}
+            title={collapsed ? item.label : undefined}
             className={cn(
               "flex items-center gap-3 rounded-lg border-l-2 px-3 py-2 text-sm transition-colors duration-150 ease-out",
+              collapsed && "justify-center px-2",
               active
                 ? "bg-stage-learn-tint border-green text-ink font-medium"
                 : "text-ink-2 hover:bg-paper hover:text-ink border-transparent",
             )}
           >
             <item.icon className="size-5 shrink-0" />
-            {item.label}
+            {!collapsed && item.label}
           </Link>
         );
       })}
@@ -72,9 +78,11 @@ function NavGroup({
 export function SidebarNav({
   tools,
   onNavigate,
+  collapsed,
 }: {
   tools: Tool[];
   onNavigate?: () => void;
+  collapsed?: boolean;
 }) {
   const pathname = usePathname();
 
@@ -91,18 +99,21 @@ export function SidebarNav({
         items={WORKSPACE_ITEMS}
         pathname={pathname}
         onNavigate={onNavigate}
+        collapsed={collapsed}
       />
       <NavGroup
         label="Tools"
         items={toolItems}
         pathname={pathname}
         onNavigate={onNavigate}
+        collapsed={collapsed}
       />
       <NavGroup
         label="Reference"
         items={REFERENCE_ITEMS}
         pathname={pathname}
         onNavigate={onNavigate}
+        collapsed={collapsed}
       />
     </nav>
   );

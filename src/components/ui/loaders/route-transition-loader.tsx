@@ -8,8 +8,8 @@ import { useSafeReducedMotion } from "@/lib/utils/use-safe-reduced-motion";
  * The route-transition loader: the eleven session dots (Pre + 1-10)
  * chase through in stage-colour sequence. Chosen over a generic
  * progress bar or a logo draw because it rehearses the one thing every
- * screen in the app wants a student to feel — where they sit on the
- * ten-session arc — even during a loading state. See docs/DECISIONS.md.
+ * screen in the app wants a student to feel - where they sit on the
+ * ten-session arc - even during a loading state. See docs/DECISIONS.md.
  *
  * `compact` drops the full-viewport min-height for embedding inline
  * (e.g. the /design showcase) rather than as a route's loading.tsx.

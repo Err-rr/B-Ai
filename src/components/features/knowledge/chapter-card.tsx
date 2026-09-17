@@ -21,7 +21,7 @@ export function ChapterCard({ chapter }: { chapter: Chapter }) {
         </p>
         {chapter.covers.map((item) => (
           <p key={item} className="text-ink-2 text-xs">
-            — {item}
+            - {item}
           </p>
         ))}
       </div>

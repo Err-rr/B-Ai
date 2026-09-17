@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card";
 import { LinkButton } from "@/components/ui/link-button";
 import { TintedPanel } from "@/components/ui/tinted-panel";
 
-/** The hero of the page — the one thing a student should read first. */
+/** The hero of the page - the one thing a student should read first. */
 export function ContinueCard({ session }: { session: Session }) {
   return (
     <TintedPanel tone={session.stage}>

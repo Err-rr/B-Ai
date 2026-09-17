@@ -20,7 +20,7 @@ function getServerSnapshot() {
 
 /**
  * A hydration-safe `prefers-reduced-motion` read, via useSyncExternalStore
- * rather than Framer Motion's own `useReducedMotion()` — that hook reads
+ * rather than Framer Motion's own `useReducedMotion()` - that hook reads
  * `matchMedia` synchronously on the client but can't on the server, so a
  * user who already has the OS preference on gets a real hydration
  * mismatch (caught via Playwright's `reducedMotion: 'reduce'` context).

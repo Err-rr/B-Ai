@@ -1,15 +1,13 @@
-import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import { LinkButton } from "@/components/ui/link-button";
+import { Logo } from "@/components/ui/logo";
 
 export function FloatingNav() {
   return (
     <div className="sticky top-4 z-40 mx-auto max-w-5xl px-4">
       <nav className="border-line bg-card shadow-soft flex items-center justify-between rounded-full border px-5 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <span className="bg-green text-on-accent inline-flex size-8 items-center justify-center rounded-lg">
-            <Sparkles className="size-4" aria-hidden="true" />
-          </span>
+          <Logo size={32} />
           <span className="font-display text-ink text-xl font-normal">
             Bootcamp AI
           </span>

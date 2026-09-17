@@ -15,7 +15,7 @@ export async function getCurrentSession(): Promise<Session | undefined> {
 }
 
 /**
- * The 10 numbered sessions, excluding "Pre" — this is the denominator
+ * The 10 numbered sessions, excluding "Pre" - this is the denominator
  * behind every "X of 10 sessions" figure in the app (landing headline,
  * progress bars, stat pills), matching the brief's "10 sessions."
  */

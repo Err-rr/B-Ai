@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 
 /**
- * Renders a small, known subset of markdown — **bold** spans and
- * paragraph breaks — as JSX. The chat fixtures use exactly this much;
+ * Renders a small, known subset of markdown - **bold** spans and
+ * paragraph breaks - as JSX. The chat fixtures use exactly this much;
  * a full markdown library (remark/react-markdown) would be more
  * machinery than the brief's actual content needs. This is the fix
  * for the brief's literal "**Sparkpath**" bug.

@@ -14,7 +14,7 @@ export interface SegmentedProgressProps {
 
 /**
  * Discrete chunks, not a continuous bar (Brilliant's pattern). Each
- * segment's fill color is meaningful — see docs/DESIGN-SYSTEM.md.
+ * segment's fill color is meaningful - see docs/DESIGN-SYSTEM.md.
  */
 export function SegmentedProgress({
   segments,

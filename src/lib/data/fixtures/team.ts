@@ -3,27 +3,27 @@ import type { Member, Team } from "@/lib/types/domain";
 export const MEMBERS: Member[] = [
   {
     id: "heera",
-    name: "Heera Basnet",
+    name: "Shivam Kumar",
     role: "CEO",
-    email: "heera@youngfoundersschool.school",
+    email: "shivam@yfs.com",
   },
   {
     id: "ravi",
-    name: "Ravi Kumar",
+    name: "Sinu",
     role: "CTO",
-    email: "ravi@youngfoundersschool.school",
+    email: "sinu@youngfoundersschool.school",
   },
   {
     id: "mei",
-    name: "Mei Tanaka",
+    name: "Ananya",
     role: "CMO",
-    email: "mei@youngfoundersschool.school",
+    email: "ananya@youngfoundersschool.school",
   },
   {
     id: "jamal",
-    name: "Jamal Hussein",
+    name: "Shritij",
     role: "CFO",
-    email: "jamal@youngfoundersschool.school",
+    email: "shritij@youngfoundersschool.school",
   },
 ];
 
@@ -35,5 +35,5 @@ export const TEAM: Team = {
   members: MEMBERS,
 };
 
-/** The signed-in student for this mock session — always Heera. */
+/** The signed-in student for this mock session - always Shivam. */
 export const CURRENT_MEMBER_ID = "heera";

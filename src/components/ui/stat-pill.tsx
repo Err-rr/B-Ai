@@ -9,7 +9,7 @@ export interface StatPillProps {
 }
 
 /**
- * A quiet, honest stat chip for the top bar — "few and honest" per the
+ * A quiet, honest stat chip for the top bar - "few and honest" per the
  * brief, not a badge (which carries color meaning) and not a button
  * (nothing to click).
  */

@@ -17,14 +17,14 @@ export function ProgressSection() {
   return (
     <Section title="Segmented progress">
       <div className="space-y-2">
-        <p className="text-ink-3 text-xs">Onboarding — step 2 of 3</p>
+        <p className="text-ink-3 text-xs">Onboarding - step 2 of 3</p>
         <SegmentedProgress
           segments={onboardingSegments}
           label="Onboarding progress"
         />
       </div>
       <div className="space-y-2">
-        <p className="text-ink-3 text-xs">Workbench — 4 of 10 sessions</p>
+        <p className="text-ink-3 text-xs">Workbench - 4 of 10 sessions</p>
         <SegmentedProgress
           segments={journeySegments}
           label="Bootcamp progress"

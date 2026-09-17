@@ -1,12 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import type { Member, Tool } from "@/lib/types/domain";
 import { Avatar } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { Logo } from "@/components/ui/logo";
 import { EASE } from "@/lib/utils/motion";
 import { useSafeReducedMotion } from "@/lib/utils/use-safe-reduced-motion";
 import { SidebarNav } from "./sidebar-nav";
@@ -26,9 +26,7 @@ export function MobileNav({
     <>
       <header className="border-line bg-card sticky top-0 z-30 flex h-16 items-center justify-between border-b px-4 md:hidden">
         <span className="flex items-center gap-2">
-          <span className="bg-green text-on-accent inline-flex size-7 items-center justify-center rounded-lg">
-            <Sparkles className="size-3.5" aria-hidden="true" />
-          </span>
+          <Logo size={28} />
           <span className="font-display text-ink text-lg font-normal">
             Bootcamp AI
           </span>
@@ -78,7 +76,7 @@ export function MobileNav({
               <div className="flex-1 overflow-y-auto px-3 py-4">
                 <SidebarNav tools={tools} onNavigate={() => setOpen(false)} />
               </div>
-              <div className="border-line flex items-center justify-between border-t p-4">
+              <div className="border-line flex items-center border-t p-4">
                 <div className="flex items-center gap-3">
                   <Avatar name={member.name} size="sm" />
                   <div className="flex flex-col">
@@ -88,7 +86,6 @@ export function MobileNav({
                     <span className="text-ink-3 text-xs">{member.role}</span>
                   </div>
                 </div>
-                <ThemeToggle />
               </div>
             </motion.div>
           </>

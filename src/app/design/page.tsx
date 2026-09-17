@@ -1,4 +1,3 @@
-import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { BadgesSection } from "./_sections/badges-section";
 import { ButtonsSection } from "./_sections/buttons-section";
 import { CardsSection } from "./_sections/cards-section";
@@ -10,16 +9,13 @@ import { TokensSection } from "./_sections/tokens-section";
 export default function DesignSystemPage() {
   return (
     <main className="mx-auto max-w-4xl space-y-12 px-6 py-16">
-      <header className="flex items-center justify-between">
-        <div>
-          <p className="text-eyebrow text-ink-3 font-semibold uppercase">
-            Design system
-          </p>
-          <h1 className="font-display text-ink text-4xl font-normal">
-            Bootcamp AI kit
-          </h1>
-        </div>
-        <ThemeToggle />
+      <header>
+        <p className="text-eyebrow text-ink-3 font-semibold uppercase">
+          Design system
+        </p>
+        <h1 className="font-display text-ink text-4xl font-normal">
+          Bootcamp AI kit
+        </h1>
       </header>
 
       <TokensSection />

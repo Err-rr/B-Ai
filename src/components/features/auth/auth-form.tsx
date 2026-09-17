@@ -1,11 +1,11 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { GoogleMark } from "@/components/ui/google-mark";
 import { Input } from "@/components/ui/input";
+import { Logo } from "@/components/ui/logo";
 
 interface AuthFormProps {
   mode: "sign-in" | "sign-up";
@@ -31,7 +31,7 @@ const COPY = {
 } as const;
 
 /**
- * UI only — there is no backend. Any credential proceeds: sign-up
+ * UI only - there is no backend. Any credential proceeds: sign-up
  * routes to onboarding, sign-in routes straight to the Workbench.
  */
 export function AuthForm({ mode }: AuthFormProps) {
@@ -45,9 +45,7 @@ export function AuthForm({ mode }: AuthFormProps) {
   return (
     <div className="mx-auto flex min-h-screen max-w-sm flex-col justify-center px-6 py-16">
       <div className="mb-8 flex flex-col items-center gap-4">
-        <span className="bg-green text-on-accent inline-flex size-10 items-center justify-center rounded-xl">
-          <Sparkles className="size-5" aria-hidden="true" />
-        </span>
+        <Logo size={44} />
         <h1 className="text-ink font-sans text-3xl font-semibold">
           {copy.heading}
         </h1>

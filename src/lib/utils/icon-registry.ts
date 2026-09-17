@@ -10,7 +10,7 @@ import {
 
 /**
  * Fixture data stores icon choices as plain strings (framework-agnostic
- * data layer, D-010) — this is the one place that resolves a name to
+ * data layer, D-010) - this is the one place that resolves a name to
  * an actual component.
  */
 const ICON_REGISTRY: Record<string, LucideIcon> = {

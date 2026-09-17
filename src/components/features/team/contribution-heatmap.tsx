@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { cn } from "@/lib/utils/cn";
 
 /**
- * Fully literal per-stage, per-intensity classes — Tailwind's scanner
+ * Fully literal per-stage, per-intensity classes - Tailwind's scanner
  * can't see a class built by string concatenation at runtime (e.g.
  * `${stage.bg}/25`), so every combination is spelled out here.
  */
@@ -55,8 +55,8 @@ export function ContributionHeatmap({
   }
 
   return (
-    <Card className="overflow-x-auto">
-      <div className="grid min-w-[640px] grid-cols-[120px_repeat(10,1fr)] gap-2">
+    <Card className="w-full max-w-sm overflow-x-auto">
+      <div className="grid min-w-[360px] grid-cols-[72px_repeat(10,1fr)] gap-1.5">
         <span />
         {sessions.map((session) => (
           <span

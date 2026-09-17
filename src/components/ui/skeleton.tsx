@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils/cn";
 
 /**
  * The base shimmer block. Compose it into shapes that match the real
- * content (a card, a message row, a stat) — never a bare grey
+ * content (a card, a message row, a stat) - never a bare grey
  * rectangle standing in for a whole screen.
  */
 export function Skeleton({ className }: { className?: string }) {

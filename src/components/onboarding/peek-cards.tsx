@@ -30,15 +30,17 @@ export function PeekCards({
         animate={{ opacity: 1, y: 0 }}
         exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -8 }}
         transition={{ duration: reduceMotion ? 0.1 : 0.24, ease: EASE.out }}
-        className="flex flex-col items-center gap-4 pt-4"
+        className="flex w-full flex-col items-center gap-4 pb-4"
       >
         <p className="text-ink-3 text-sm">What the {roleLabel} actually does</p>
-        <div className="flex items-center justify-center gap-3">
+        <div className="grid w-full grid-cols-1 gap-3 sm:flex sm:items-center sm:justify-center">
           {peeks.map((peek, index) => (
             <div
               key={peek}
-              className="border-line bg-card shadow-hover flex w-40 items-start gap-2 rounded-xl border p-3"
-              style={{ rotate: `${ROTATIONS[index % ROTATIONS.length]}deg` }}
+              className="border-line bg-card shadow-hover flex items-start gap-2 rounded-xl border p-3 sm:w-40"
+              style={{
+                rotate: `${ROTATIONS[index % ROTATIONS.length]}deg`,
+              }}
             >
               <Sparkle
                 className="text-stage-learn size-3.5 shrink-0"

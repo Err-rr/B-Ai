@@ -54,11 +54,11 @@ export function CardsSection() {
 
       <TintedPanel tone="build">
         <p className="text-eyebrow text-ink-3 mb-4 font-semibold uppercase">
-          Tinted panel — Build stage
+          Tinted panel - Build stage
         </p>
         <Card>
           <p className="text-ink-2 text-sm">
-            A tinted panel never nests another tinted panel — it holds white
+            A tinted panel never nests another tinted panel - it holds white
             cards.
           </p>
         </Card>
@@ -66,7 +66,7 @@ export function CardsSection() {
 
       <div>
         <p className="text-ink-3 mb-3 text-sm">
-          Selectable cards — dramatic selection contrast
+          Selectable cards - dramatic selection contrast
         </p>
         <div className="grid grid-cols-3 gap-4">
           {ROLE_CHOICES.map((role) => (
