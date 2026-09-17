@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import type { Session } from "@/lib/types/domain";
 import { Card } from "@/components/ui/card";
 import { STAGE_CLASSES, STAGE_LABEL } from "@/lib/utils/stage";
@@ -65,31 +64,20 @@ export function JourneySection({ sessions }: { sessions: Session[] }) {
           </motion.div>
         </Card>
 
-        <div className="mt-6 flex items-center justify-between gap-4">
-          <div className="flex min-w-0 flex-1 flex-wrap gap-x-5 gap-y-2">
-            {(["learn", "learn-to-build", "build", "launch"] as const).map(
-              (stage) => (
+        <div className="mt-6 flex flex-wrap gap-5">
+          {(["learn", "learn-to-build", "build", "launch"] as const).map(
+            (stage) => (
+              <span
+                key={stage}
+                className="text-ink-2 flex items-center gap-2 text-sm"
+              >
                 <span
-                  key={stage}
-                  className="text-ink-2 flex items-center gap-2 text-sm"
-                >
-                  <span
-                    className={`size-2.5 rounded-full ${STAGE_CLASSES[stage].bg}`}
-                  />
-                  {STAGE_LABEL[stage]}
-                </span>
-              ),
-            )}
-          </div>
-          <div className="relative size-14 shrink-0 sm:size-20">
-            <Image
-              src="/reference/boy.png"
-              alt=""
-              fill
-              sizes="80px"
-              className="object-contain"
-            />
-          </div>
+                  className={`size-2.5 rounded-full ${STAGE_CLASSES[stage].bg}`}
+                />
+                {STAGE_LABEL[stage]}
+              </span>
+            ),
+          )}
         </div>
       </div>
     </div>

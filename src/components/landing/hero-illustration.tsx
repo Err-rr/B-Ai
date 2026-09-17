@@ -1,4 +1,5 @@
 import { Hammer, Lightbulb, Rocket, Trophy } from "lucide-react";
+import Image from "next/image";
 import { STAGE_CLASSES } from "@/lib/utils/stage";
 
 const STEPS = [
@@ -24,23 +25,36 @@ const OFFSETS = [
  */
 export function HeroIllustration() {
   return (
-    <div className="border-line bg-card shadow-soft flex flex-col gap-4 overflow-hidden rounded-2xl border p-8">
-      {STEPS.map((step, index) => {
-        const stage = STAGE_CLASSES[step.tone];
-        return (
-          <div
-            key={step.tone}
-            className={`flex items-center gap-3 ${OFFSETS[index]}`}
-          >
-            <span
-              className={`inline-flex size-11 shrink-0 items-center justify-center rounded-xl ${stage.bg} text-on-accent`}
+    <div className="border-line bg-card shadow-soft flex items-stretch gap-4 overflow-hidden rounded-2xl border p-8">
+      <div className="flex w-[35%] min-w-0 flex-col justify-center gap-4">
+        {STEPS.map((step, index) => {
+          const stage = STAGE_CLASSES[step.tone];
+          return (
+            <div
+              key={step.tone}
+              className={`flex items-center gap-3 ${OFFSETS[index]}`}
             >
-              <step.icon className="size-5" aria-hidden="true" />
-            </span>
-            <span className="text-ink text-sm font-medium">{step.label}</span>
-          </div>
-        );
-      })}
+              <span
+                className={`inline-flex size-11 shrink-0 items-center justify-center rounded-xl ${stage.bg} text-on-accent`}
+              >
+                <step.icon className="size-5" aria-hidden="true" />
+              </span>
+              <span className="text-ink text-sm font-medium">
+                {step.label}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+      <div className="relative w-[65%] shrink-0">
+        <Image
+          src="/reference/boy.png"
+          alt=""
+          fill
+          sizes="65vw"
+          className="object-contain object-right"
+        />
+      </div>
     </div>
   );
 }
