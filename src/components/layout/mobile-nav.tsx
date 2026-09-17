@@ -26,8 +26,8 @@ export function MobileNav({
     <>
       <header className="border-line bg-card sticky top-0 z-30 flex h-16 items-center justify-between border-b px-4 md:hidden">
         <span className="flex items-center gap-2">
-          <Logo size={28} />
-          <span className="font-display text-ink text-lg font-normal">
+          <Logo size={30} />
+          <span className="font-display text-ink text-xl font-normal tracking-wide">
             Bootcamp AI
           </span>
         </span>

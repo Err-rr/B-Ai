@@ -96,7 +96,12 @@ export function OnboardingFlow({
       </div>
 
       <div className="mb-10 flex flex-col items-center gap-3 text-center">
-        <Logo size={40} />
+        <span className="flex items-center gap-2">
+          <Logo size={40} />
+          <span className="font-display text-ink text-2xl font-normal">
+            Bootcamp AI
+          </span>
+        </span>
         <h1 className="text-ink font-sans text-3xl font-semibold">
           {STEP_COPY[step].question}
         </h1>

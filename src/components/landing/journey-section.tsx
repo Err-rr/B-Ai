@@ -1,34 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
 import type { Session } from "@/lib/types/domain";
 import { Card } from "@/components/ui/card";
+import { SessionMarquee } from "@/components/shared/session-marquee";
 import { STAGE_CLASSES, STAGE_LABEL } from "@/lib/utils/stage";
-import { useSafeReducedMotion } from "@/lib/utils/use-safe-reduced-motion";
 
-function SessionTile({ session }: { session: Session }) {
-  return (
-    <div className="flex w-32 shrink-0 flex-col gap-2 rounded-lg p-3">
-      <span
-        className={`size-2 rounded-full ${STAGE_CLASSES[session.stage].bg}`}
-      />
-      <span className="text-ink-3 text-xs">Session {session.number}</span>
-      <span className="text-ink line-clamp-2 text-xs font-medium">
-        {session.title}
-      </span>
-    </div>
-  );
-}
-
-/**
- * A static box whose inner track auto-scrolls in a seamless loop
- * (session 10 rolls straight back into session 1) - no scrollbar, not
- * user-draggable. Pauses entirely under prefers-reduced-motion.
- */
 export function JourneySection({ sessions }: { sessions: Session[] }) {
-  const reduceMotion = useSafeReducedMotion();
-  const track = reduceMotion ? sessions : [...sessions, ...sessions];
-
   return (
     <div className="mx-auto max-w-6xl px-6">
       <div className="bg-tint-lavender rounded-2xl p-8 md:p-12">
@@ -44,24 +19,8 @@ export function JourneySection({ sessions }: { sessions: Session[] }) {
           proves you solved it.
         </p>
 
-        <Card className="mt-8 overflow-hidden">
-          <motion.div
-            className="flex w-max gap-3"
-            animate={reduceMotion ? undefined : { x: ["0%", "-50%"] }}
-            transition={
-              reduceMotion
-                ? undefined
-                : {
-                    duration: sessions.length * 3,
-                    ease: "linear",
-                    repeat: Infinity,
-                  }
-            }
-          >
-            {track.map((session, index) => (
-              <SessionTile key={`${session.id}-${index}`} session={session} />
-            ))}
-          </motion.div>
+        <Card className="mt-8">
+          <SessionMarquee sessions={sessions} />
         </Card>
 
         <div className="mt-6 flex flex-wrap gap-5">

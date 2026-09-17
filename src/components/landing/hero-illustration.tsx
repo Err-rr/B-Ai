@@ -25,8 +25,8 @@ const OFFSETS = [
  */
 export function HeroIllustration() {
   return (
-    <div className="border-line bg-card shadow-soft flex items-stretch gap-4 overflow-hidden rounded-2xl border p-8">
-      <div className="flex w-1/2 min-w-0 flex-col justify-center gap-4 sm:w-[35%]">
+    <div className="border-line bg-card shadow-soft flex items-stretch gap-4 overflow-hidden rounded-2xl border">
+      <div className="flex w-1/2 min-w-0 flex-col justify-center gap-4 py-8 pl-8 sm:w-[35%]">
         {STEPS.map((step, index) => {
           const stage = STAGE_CLASSES[step.tone];
           return (

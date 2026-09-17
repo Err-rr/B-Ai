@@ -29,7 +29,7 @@ export function SelectableCard({
       onClick={onSelect}
       aria-pressed={selected}
       className={cn(
-        "flex flex-col items-start gap-3 rounded-2xl border p-6 text-left transition-[transform,box-shadow,border-color,filter] duration-200 ease-out",
+        "flex flex-col items-start gap-2 rounded-2xl border p-4 text-left transition-[transform,box-shadow,border-color,filter] duration-200 ease-out sm:gap-3 sm:p-6",
         selected
           ? "bg-tint-mint border-green shadow-soft scale-105"
           : "border-line bg-card scale-95 opacity-70 grayscale hover:opacity-90",

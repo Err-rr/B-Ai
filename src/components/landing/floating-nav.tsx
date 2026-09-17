@@ -7,8 +7,8 @@ export function FloatingNav() {
     <div className="sticky top-4 z-40 mx-auto max-w-5xl px-4">
       <nav className="border-line bg-card shadow-soft flex items-center justify-between rounded-full border px-5 py-3">
         <Link href="/" className="flex items-center gap-2">
-          <Logo size={32} />
-          <span className="font-display text-ink text-xl font-normal">
+          <Logo size={34} />
+          <span className="font-display text-ink text-2xl font-normal tracking-wide">
             Bootcamp AI
           </span>
         </Link>

@@ -21,11 +21,18 @@ export function Sidebar({ tools, member }: { tools: Tool[]; member: Member }) {
         collapsed ? "w-20" : "w-72",
       )}
     >
-      <div className="flex items-center justify-between gap-2 p-4">
+      <div
+        className={cn(
+          "flex gap-2 p-4",
+          collapsed
+            ? "flex-col items-center"
+            : "items-center justify-between",
+        )}
+      >
         <Link href="/workbench" className="flex min-w-0 items-center gap-2">
           <Logo size={32} />
           {!collapsed && (
-            <span className="font-display text-ink truncate text-xl font-normal">
+            <span className="font-display text-ink truncate text-2xl font-normal tracking-wide">
               Bootcamp AI
             </span>
           )}

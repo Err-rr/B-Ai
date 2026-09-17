@@ -55,8 +55,8 @@ export function ContributionHeatmap({
   }
 
   return (
-    <Card className="w-full max-w-sm overflow-x-auto">
-      <div className="grid min-w-[360px] grid-cols-[72px_repeat(10,1fr)] gap-1.5">
+    <Card className="w-full max-w-md">
+      <div className="grid grid-cols-[minmax(48px,88px)_repeat(10,minmax(0,1fr))] gap-1 sm:gap-1.5">
         <span />
         {sessions.map((session) => (
           <span
