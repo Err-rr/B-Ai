@@ -11,9 +11,9 @@ const STEPS = [
 
 const OFFSETS = [
   "translate-x-0",
-  "translate-x-3",
-  "translate-x-6",
-  "translate-x-9",
+  "translate-x-[8px] sm:translate-x-[16px]",
+  "translate-x-[16px] sm:translate-x-[32px]",
+  "translate-x-[24px] sm:translate-x-[48px]",
 ];
 
 /**
@@ -26,7 +26,7 @@ const OFFSETS = [
 export function HeroIllustration() {
   return (
     <div className="border-line bg-card shadow-soft flex items-stretch gap-4 overflow-hidden rounded-2xl border p-8">
-      <div className="flex w-[35%] min-w-0 flex-col justify-center gap-4">
+      <div className="flex w-1/2 min-w-0 flex-col justify-center gap-4 sm:w-[35%]">
         {STEPS.map((step, index) => {
           const stage = STAGE_CLASSES[step.tone];
           return (
@@ -46,13 +46,13 @@ export function HeroIllustration() {
           );
         })}
       </div>
-      <div className="relative w-[65%] shrink-0">
+      <div className="relative w-1/2 shrink-0 sm:w-[65%]">
         <Image
           src="/reference/boy.png"
           alt=""
           fill
           sizes="65vw"
-          className="object-contain object-right"
+          className="object-cover object-right"
         />
       </div>
     </div>
