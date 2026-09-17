@@ -27,20 +27,18 @@ function SessionTile({ session }: { session: Session }) {
 /**
  * Marks where the loop wraps back to Session 1 - same box footprint
  * as a session tile (w-32, p-3) so the gap either side of it exactly
- * matches the gap between any other two tiles, keeping it centered
- * between "Session 10" and "Session 1" rather than drifting toward one.
+ * matches the gap between any other two tiles. Nudged slightly toward
+ * the tile before it (Session 10) since the star's own shape reads as
+ * optically off-center when placed on true geometric center.
  */
 function LoopMarker() {
   return (
-    <div className="flex w-32 shrink-0 flex-col items-center justify-center gap-1.5 rounded-lg p-3">
+    <div className="flex w-32 shrink-0 items-center justify-center rounded-lg p-3">
       <Star
-        className="text-stage-build size-6"
+        className="text-stage-build -translate-x-1.5 size-7"
         fill="currentColor"
         aria-hidden="true"
       />
-      <span className="text-ink-3 text-eyebrow font-semibold uppercase">
-        Loop
-      </span>
     </div>
   );
 }
