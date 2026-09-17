@@ -9,13 +9,6 @@ const STEPS = [
   { icon: Trophy, tone: "launch" as const, label: "Launch" },
 ];
 
-const OFFSETS = [
-  "translate-x-0",
-  "translate-x-[16px]",
-  "translate-x-[32px]",
-  "translate-x-[48px]",
-];
-
 /**
  * A flat geometric preview of the stage arc - no stock photography or
  * 3D renders, per the brief. Cascading rather than a literal chart.
@@ -26,7 +19,8 @@ const OFFSETS = [
  * Two separate layouts, not one responsive one: on a phone the
  * cover-cropped image was clipping the boy's face, so under `sm` this
  * renders a 2x2 icon grid with the full, uncropped image beneath it.
- * From `sm` up it's the original side-by-side cascade + cropped image.
+ * From `sm` up it's the same straight top-to-bottom list beside the
+ * cropped image.
  */
 export function HeroIllustration() {
   return (
@@ -62,13 +56,10 @@ export function HeroIllustration() {
 
       <div className="border-line bg-card shadow-soft hidden items-stretch gap-4 overflow-hidden rounded-2xl border sm:flex">
         <div className="flex w-[35%] min-w-0 flex-col justify-center gap-4 py-8 pl-8">
-          {STEPS.map((step, index) => {
+          {STEPS.map((step) => {
             const stage = STAGE_CLASSES[step.tone];
             return (
-              <div
-                key={step.tone}
-                className={`flex items-center gap-3 ${OFFSETS[index]}`}
-              >
+              <div key={step.tone} className="flex items-center gap-3">
                 <span
                   className={`inline-flex size-11 shrink-0 items-center justify-center rounded-xl ${stage.bg} text-on-accent`}
                 >
