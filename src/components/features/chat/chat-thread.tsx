@@ -63,8 +63,8 @@ export function ChatThread({
 
   return (
     <div className="flex h-[calc(100vh-6rem)] flex-col">
-      <div className="flex items-center justify-between gap-3 py-4">
-        <div>
+      <div className="flex flex-col gap-3 py-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
           <h1 className="text-ink font-sans text-2xl font-semibold">
             Chat with YFS-AI
           </h1>
@@ -72,7 +72,7 @@ export function ChatThread({
             Persistent. Your venture context is always loaded.
           </p>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 sm:shrink-0">
           {currentSession && (
             <Button
               variant="secondary"
@@ -109,7 +109,7 @@ export function ChatThread({
           value={input}
           onChange={(event) => setInput(event.target.value)}
           placeholder="Ask YFS-AI anything about your venture…"
-          className="border-line bg-card text-ink placeholder:text-ink-3 hover:border-border-hover flex-1 rounded-xl border px-4 py-3 text-sm transition-colors duration-150 ease-out"
+          className="border-line bg-card text-ink placeholder:text-ink-3 hover:border-border-hover min-w-0 flex-1 rounded-xl border px-4 py-3 text-sm transition-colors duration-150 ease-out"
         />
         <Button type="submit" disabled={!input.trim() || sending}>
           Send
