@@ -11,7 +11,7 @@ export function ShellContent({ children }: { children: ReactNode }) {
   return (
     <div
       className={cn(
-        "flex min-h-screen min-w-0 flex-1 flex-col transition-[margin] duration-150 ease-out",
+        "flex min-h-screen min-w-0 flex-1 flex-col transition-[margin] duration-150 ease-out md:flex-row",
         collapsed ? "md:ml-20" : "md:ml-72",
       )}
     >

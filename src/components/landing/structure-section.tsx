@@ -34,7 +34,7 @@ export function StructureSection() {
           The structure
         </p>
         <h2 className="font-display text-ink mt-2 text-4xl font-normal">
-          Two days. Four roles. One pitch.
+          Two days. Seven roles. One pitch.
         </h2>
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           {DAYS.map((day) => (

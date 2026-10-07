@@ -12,11 +12,16 @@ import { EASE } from "@/lib/utils/motion";
 import { useSafeReducedMotion } from "@/lib/utils/use-safe-reduced-motion";
 import { PlanStep } from "./plan-step";
 import { RoleStep } from "./role-step";
+import { TeamPathStep, type TeamPath } from "./team-path-step";
 import { VentureStep } from "./venture-step";
 
-const STEP_TONES = ["learn", "learn-to-build", "build"] as const;
+const STEP_TONES = ["learn", "learn-to-build", "build", "launch"] as const;
 
 const STEP_COPY = [
+  {
+    question: "How would you like to get started?",
+    subtext: "Build with a team or jump right into your workspace.",
+  },
   {
     question: "Which role will you own?",
     subtext: "Every role can use every tool. This is about who leads what.",
@@ -45,6 +50,7 @@ export function OnboardingFlow({
   const router = useRouter();
   const reduceMotion = useSafeReducedMotion();
   const [step, setStep] = useState(0);
+  const [teamPath, setTeamPath] = useState<TeamPath | null>(null);
   const [role, setRole] = useState<CXORole | null>(null);
   const [ventureName, setVentureName] = useState(initialVentureName);
   const [ventureDescription, setVentureDescription] = useState(
@@ -53,8 +59,10 @@ export function OnboardingFlow({
 
   const canContinue =
     step === 0
-      ? role !== null
+      ? teamPath !== null
       : step === 1
+        ? role !== null
+        : step === 2
         ? ventureName.trim().length > 0
         : true;
 
@@ -67,7 +75,7 @@ export function OnboardingFlow({
   }
 
   function handleContinue() {
-    if (step === 2) {
+    if (step === 3) {
       router.push("/workbench");
       return;
     }
@@ -120,8 +128,17 @@ export function OnboardingFlow({
               ease: EASE.out,
             }}
           >
-            {step === 0 && <RoleStep selected={role} onSelect={setRole} />}
+            {step === 0 && (
+              <TeamPathStep
+                selected={teamPath}
+                onSelect={setTeamPath}
+                onQuickStart={() => router.push("/workbench")}
+              />
+            )}
             {step === 1 && (
+              <RoleStep selected={role} onSelect={setRole} />
+            )}
+            {step === 2 && (
               <VentureStep
                 name={ventureName}
                 description={ventureDescription}
@@ -129,7 +146,7 @@ export function OnboardingFlow({
                 onDescriptionChange={setVentureDescription}
               />
             )}
-            {step === 2 && <PlanStep sessions={sessions} />}
+            {step === 3 && <PlanStep sessions={sessions} />}
           </motion.div>
         </AnimatePresence>
       </div>
@@ -141,7 +158,7 @@ export function OnboardingFlow({
         disabled={!canContinue}
         onClick={handleContinue}
       >
-        {step === 2 ? "Enter the Workbench" : "Continue"}
+        {step === 3 ? "Enter the Workbench" : "Continue"}
       </Button>
     </div>
   );

@@ -19,6 +19,7 @@ export function Sidebar({ tools, member }: { tools: Tool[]; member: Member }) {
       className={cn(
         "border-line bg-card fixed inset-y-0 left-0 z-20 hidden h-screen shrink-0 flex-col border-r transition-[width] duration-150 ease-out md:flex",
         collapsed ? "w-20" : "w-72",
+        "md:max-xl:w-20",
       )}
     >
       <div
@@ -27,6 +28,7 @@ export function Sidebar({ tools, member }: { tools: Tool[]; member: Member }) {
           collapsed
             ? "flex-col items-center"
             : "items-center justify-between",
+          "md:max-xl:flex-col md:max-xl:items-center",
         )}
       >
         <Link href="/workbench" className="flex min-w-0 items-center gap-2">
@@ -43,7 +45,7 @@ export function Sidebar({ tools, member }: { tools: Tool[]; member: Member }) {
           size="icon"
           aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
           onClick={toggle}
-          className="shrink-0"
+          className="shrink-0 md:max-xl:hidden"
         >
           {collapsed ? (
             <PanelLeftOpen className="size-5" aria-hidden="true" />
@@ -61,6 +63,7 @@ export function Sidebar({ tools, member }: { tools: Tool[]; member: Member }) {
         className={cn(
           "border-line flex items-center border-t p-4",
           collapsed ? "justify-center" : "justify-between",
+          "md:max-xl:justify-center",
         )}
       >
         <div className="flex min-w-0 items-center gap-3">

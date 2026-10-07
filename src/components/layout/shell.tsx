@@ -5,6 +5,7 @@ import { ShellContent } from "./shell-content";
 import { Sidebar } from "./sidebar";
 import { SidebarProvider } from "./sidebar-context";
 import { TopBar } from "./top-bar";
+import { OrynTutor } from "./oryn-tutor";
 
 /** The signed-in app shell: fixed sidebar (desktop) / drawer (mobile) + top bar. */
 export async function Shell({ children }: { children: React.ReactNode }) {
@@ -15,9 +16,12 @@ export async function Shell({ children }: { children: React.ReactNode }) {
       <div className="flex min-h-screen">
         <Sidebar tools={tools} member={member} />
         <ShellContent>
-          <MobileNav tools={tools} member={member} />
-          <TopBar />
-          <main className="min-w-0 flex-1 px-4 pb-16 md:px-8">{children}</main>
+          <div className="flex min-h-screen min-w-0 flex-1 flex-col">
+            <MobileNav tools={tools} member={member} />
+            <TopBar />
+            <main className="min-w-0 flex-1 px-4 pb-16 md:px-8">{children}</main>
+          </div>
+          <OrynTutor />
         </ShellContent>
       </div>
     </SidebarProvider>

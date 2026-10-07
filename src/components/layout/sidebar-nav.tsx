@@ -1,9 +1,7 @@
 "use client";
 
 import {
-  BookOpen,
-  LayoutDashboard,
-  MessageCircle,
+  Send,
   User,
   Users,
 } from "lucide-react";
@@ -19,13 +17,8 @@ interface NavItem {
   icon: React.ComponentType<{ className?: string }>;
 }
 
-const WORKSPACE_ITEMS: NavItem[] = [
-  { href: "/workbench", label: "Workbench", icon: LayoutDashboard },
-  { href: "/chat", label: "Chat with YFS-AI", icon: MessageCircle },
-];
-
 const REFERENCE_ITEMS: NavItem[] = [
-  { href: "/knowledge", label: "Knowledge", icon: BookOpen },
+  { href: "/submit-idea", label: "Submit Idea", icon: Send },
   { href: "/team", label: "Team", icon: Users },
   { href: "/profile", label: "Profile", icon: User },
 ];
@@ -94,13 +87,6 @@ export function SidebarNav({
 
   return (
     <nav className="flex flex-col gap-6">
-      <NavGroup
-        label="Workspace"
-        items={WORKSPACE_ITEMS}
-        pathname={pathname}
-        onNavigate={onNavigate}
-        collapsed={collapsed}
-      />
       <NavGroup
         label="Tools"
         items={toolItems}

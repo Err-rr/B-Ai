@@ -1,6 +1,6 @@
 import type { Stage } from "./stage";
 
-export type CXORole = "CEO" | "CTO" | "CMO" | "CFO";
+export type CXORole = "CEO" | "CTO" | "CMO" | "CFO" | "CDO" | "CIO" | "CSO";
 
 export type SessionStatus = "complete" | "current" | "upcoming";
 

@@ -20,8 +20,8 @@ export function ContinueCard({ session }: { session: Session }) {
             You&rsquo;ll walk away with: {session.artifact}
           </p>
         </div>
-        <LinkButton href="/chat" className="w-full shrink-0 lg:w-auto">
-          Continue in Chat
+        <LinkButton href="/workbench" className="w-full shrink-0 lg:w-auto">
+          Continue in Workbench
           <ArrowRight className="size-4" aria-hidden="true" />
         </LinkButton>
       </Card>

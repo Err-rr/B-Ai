@@ -33,8 +33,8 @@ export default async function WorkbenchPage() {
           Hey {member.name.split(" ")[0]}
         </h1>
         <p className="text-ink-2 mt-1 text-sm">
-          Pick a tool, or just keep talking to YFS-AI. Your venture context
-          follows you everywhere.
+          Pick a tool to move your venture forward. Oryn is here to guide you
+          with your work and venture context.
         </p>
       </div>
 

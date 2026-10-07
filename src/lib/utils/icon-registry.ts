@@ -1,10 +1,14 @@
 import {
   Calculator,
+  HeartHandshake,
   FlaskConical,
+  Lightbulb,
   LayoutGrid,
   type LucideIcon,
+  Megaphone,
   MessagesSquare,
   Mic,
+  ShieldCheck,
   Sparkles,
 } from "lucide-react";
 
@@ -19,6 +23,10 @@ const ICON_REGISTRY: Record<string, LucideIcon> = {
   LayoutGrid,
   Mic,
   Calculator,
+  Lightbulb,
+  Megaphone,
+  ShieldCheck,
+  HeartHandshake,
 };
 
 export function getToolIcon(name: string): LucideIcon {

@@ -31,8 +31,8 @@ const COPY = {
 } as const;
 
 /**
- * UI only - there is no backend. Any credential proceeds: sign-up
- * routes to onboarding, sign-in routes straight to the Workbench.
+ * UI only - there is no backend. Sign-up routes to onboarding and sign-in
+ * routes straight to the Workbench.
  */
 export function AuthForm({ mode }: AuthFormProps) {
   const router = useRouter();
@@ -51,21 +51,25 @@ export function AuthForm({ mode }: AuthFormProps) {
         </h1>
       </div>
 
-      <Button
-        variant="secondary"
-        size="lg"
-        className="w-full"
-        onClick={proceed}
-      >
-        <GoogleMark className="size-5" />
-        Continue with Google
-      </Button>
+      {mode === "sign-in" && (
+        <>
+          <Button
+            variant="secondary"
+            size="lg"
+            className="w-full"
+            onClick={proceed}
+          >
+            <GoogleMark className="size-5" />
+            Continue with Google
+          </Button>
 
-      <div className="my-6 flex items-center gap-3">
-        <span className="bg-line h-px flex-1" />
-        <span className="text-ink-3 text-xs uppercase">or</span>
-        <span className="bg-line h-px flex-1" />
-      </div>
+          <div className="my-6 flex items-center gap-3">
+            <span className="bg-line h-px flex-1" />
+            <span className="text-ink-3 text-xs uppercase">or</span>
+            <span className="bg-line h-px flex-1" />
+          </div>
+        </>
+      )}
 
       <form
         className="space-y-4"
@@ -74,18 +78,59 @@ export function AuthForm({ mode }: AuthFormProps) {
           proceed();
         }}
       >
-        <Input
-          type="email"
-          label="Email"
-          placeholder="you@school.edu"
-          required
-        />
-        <Input
-          type="password"
-          label="Password"
-          placeholder="••••••••"
-          required
-        />
+        {mode === "sign-up" ? (
+          <>
+            <Input label="Name" placeholder="Your name" autoComplete="name" required />
+            <Input
+              type="email"
+              label="Gmail"
+              placeholder="you@gmail.com"
+              pattern=".+@gmail\.com"
+              title="Please enter a Gmail address."
+              autoComplete="email"
+              required
+            />
+            <div className="grid grid-cols-2 gap-4">
+              <Input type="number" label="Age" min={5} max={100} placeholder="Your age" required />
+              <div className="space-y-1.5">
+                <label htmlFor="gender" className="text-ink-2 text-sm font-medium">
+                  Gender
+                </label>
+                <select
+                  id="gender"
+                  name="gender"
+                  required
+                  defaultValue=""
+                  className="border-line bg-card text-ink w-full rounded-xl border px-4 py-3 text-sm"
+                >
+                  <option value="" disabled>Select gender</option>
+                  <option>Female</option>
+                  <option>Male</option>
+                  <option>Non-binary</option>
+                  <option>Prefer not to say</option>
+                </select>
+              </div>
+            </div>
+            <Input label="School" placeholder="Your school" autoComplete="organization" required />
+          </>
+        ) : (
+          <>
+            <Input
+              type="email"
+              label="Email"
+              placeholder="you@gmail.com"
+              autoComplete="email"
+              required
+            />
+            <Input
+              type="password"
+              label="Password"
+              placeholder="••••••••"
+              autoComplete="current-password"
+              required
+            />
+          </>
+        )}
         <Button type="submit" size="lg" className="w-full">
           {copy.cta}
         </Button>
