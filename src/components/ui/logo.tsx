@@ -4,9 +4,11 @@ import { cn } from "@/lib/utils/cn";
 /** The YFS mark, used everywhere the app previously showed a sparkle badge. */
 export function Logo({
   size = 32,
+  alt = "Bootcamp AI",
   className,
 }: {
   size?: number;
+  alt?: string;
   className?: string;
 }) {
   return (
@@ -16,7 +18,7 @@ export function Logo({
     >
       <Image
         src="/reference/logo.png"
-        alt="Bootcamp AI"
+        alt={alt}
         fill
         sizes={`${size}px`}
         className="object-contain"

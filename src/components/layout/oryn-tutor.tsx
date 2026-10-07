@@ -132,7 +132,7 @@ function TutorPanel({
   return (
     <>
       <header className="border-line flex items-center gap-3 border-b p-4">
-        <Logo size={38} />
+        <Logo size={38} alt="YFS logo" />
         <div className="min-w-0 flex-1">
           <h2 className="text-ink font-sans text-base font-semibold">Oryn</h2>
           <p className="text-ink-2 text-xs">Your AI Startup Tutor</p>

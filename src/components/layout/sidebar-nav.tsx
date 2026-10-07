@@ -19,8 +19,8 @@ interface NavItem {
 
 const REFERENCE_ITEMS: NavItem[] = [
   { href: "/submit-idea", label: "Submit Idea", icon: Send },
-  { href: "/team", label: "Team", icon: Users },
   { href: "/profile", label: "Profile", icon: User },
+  { href: "/team", label: "Team", icon: Users },
 ];
 
 function NavGroup({
